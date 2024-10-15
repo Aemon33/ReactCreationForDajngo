@@ -1,3 +1,9 @@
+:root {
+  box-sizing: border-box;
+}
+* , *::before , *::after {
+  box-sizing: inherit;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,176 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    /* white-space: wrap; */
 }
+
+.container {
+  display: flex;
+}
+@media(max-width:1050px) {
+  .container  {
+    display: flex;
+    flex-direction: column;
+  
+}
+.in-container , .ex-container  {
+  width: 100% !important;
+}
+
+
+}
+
+.in-container {
+  background-color: #092e20;
+  min-height: 100vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:  1em;
+}
+.in-container img {
+  height: 5rem;
+  width: 10rem;
+  padding-top: 2em;
+  object-fit: cover;
+}
+.in-container h1  {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 4rem;
+  background: linear-gradient(40deg, #17ad03, #c8ff00, #d9ff03, #ff7403);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  text-align: center;
+  margin: 0;
+  
+}
+.in-container h3{
+ transform: translateY(80px);
+}
+.in-container p {
+  margin: 1em 0;
+  font-size: 1.25rem;
+  color: #86c218;
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+}
+.in-container .concepts_container {
+  padding: 1em;
+  margin: 2em;
+  border-radius: 5px;
+  background-color:#fff ;
+  width: 90%;
+  min-height: 7em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 1fr 1fr  1fr 1fr ;
+  justify-items: center;
+  
+}
+@media (max-width:845px){
+  .container .concepts_container {
+    display: grid;
+    grid-template-columns:  1fr ;
+  }
+  .container .concepts_container p {
+    width: 50%;
+  }
+}
+@media (min-width:1046px){
+  .container .concepts_container {
+    display: grid;
+    grid-template-columns:  1fr 1fr  ;
+  }
+}
+.concepts_container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.concepts_container img {
+  height: 7rem;
+  width: 10rem;
+  object-fit: cover;
+  
+  
+
+}
+.concepts_container p {
+  color: #706969;
+  font-size: 15px;
+}
+.concepts_container h2{
+  color: rgb(1, 117, 21);
+  text-align: center;
+}  
+
+  .ex-container{
+    background-image: url('assets/djangoman.webp');
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    min-height: 100vh;
+    width: 50%;
+    color: #fff;
+  }
+  .ex-container::after {
+    content: '';
+    background-color: rgba(0,0,0,.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  .ex-container button {
+    padding: .4em .8em;
+    color: white;
+    cursor: pointer;
+    margin-left: 1em;
+    background-color: transparent;
+    outline: 0;
+    border: #ccc solid 1px;
+    border-radius: .3em;
+    position: relative;
+    z-index: 1;
+  }
+  button:hover  {
+    background-color: #333b02;
+  }
+  button.active {
+    background-color: #b6e60a;
+    border: 0;
+  }
+  .ex-container .sub-container {
+    background-color: rgba(0,0,0,.7);
+    box-shadow: 1px 1px 10px rgb(7, 230, 7);
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 2em 3em;
+    width: 85%;
+    max-height:100%;
+    border-radius: 5px;
+  }
+  .box{
+    background-color: rgba(0,0,0,.5);
+    border-radius: 5px;
+    margin: 1em 0 ;
+    padding:1em 2em;
+  }
+
+  .sub-container code {
+
+  }
